@@ -1,32 +1,33 @@
 {
-  "name": "auth-challenge",
+  "name": "Sprint-Challenge-Authentication",
   "version": "1.0.0",
-  "description": "Authentication Sprint Challenge",
+  "description": "This challenge allows you to practice the concepts and techniques learned over the past week and apply them in a concrete project. This Sprint explored Authentication. During this Sprint, you studied Introduction to Authentication, Using Sessions and Cookies, Using JSON Web Tokens (JWT), and Client-side Authentication. In your challenge this week, you will demonstrate proficiency by creating an application that will give you a list of random programming dad jokes, as long as you are authorized.",
   "main": "index.js",
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/LambdaSchool/Sprint-Challenge-Authentication.git"
+    "url": "git+https://github.com/turkworks/Sprint-Challenge-Authentication.git"
   },
   "keywords": [],
-  "author": "Lambda School",
+  "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/LambdaSchool/Sprint-Challenge-Authentication/issues"
+    "url": "https://github.com/turkworks/Sprint-Challenge-Authentication/issues"
   },
-  "homepage": "https://github.com/LambdaSchool/Sprint-Challenge-Authentication#readme",
+  "homepage": "https://github.com/turkworks/Sprint-Challenge-Authentication#readme",
+  "devDependencies": {
+    "nodemon": "^1.18.9"
+  },
   "dependencies": {
     "axios": "^0.18.0",
     "bcryptjs": "^2.4.3",
-    "cors": "^2.8.4",
+    "cors": "^2.8.5",
     "express": "^4.16.4",
-    "jsonwebtoken": "^8.3.0",
+    "jsonwebtoken": "^8.4.0",
     "knex": "^0.15.2",
     "sqlite3": "^4.0.2"
-  },
-  "devDependencies": {
-    "nodemon": "^1.18.4"
   }
 }

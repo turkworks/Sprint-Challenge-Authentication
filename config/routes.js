@@ -20,6 +20,7 @@ module.exports = server => {
   server.post("/api/register", register);
   server.post("/api/login", login);
   server.get("/api/jokes", authenticate, getJokes);
+  server.post("/api/post-jokes", authenticate, postJokes);
 };
 
 function register(req, res) {
@@ -54,13 +55,16 @@ function login(req, res) {
     .catch(err => res.status(500).json({ message: "login failed" }));
 }
 
-function getJokes(req, res) {
-  axios
-    .get("https://safe-falls-22549.herokuapp.com/random_ten")
-    .then(response => {
-      res.status(200).json(response.data);
+function postJokes(req, res) {
+  db("jokes")
+    .insert(req.body)
+    .then(joke => {
+      res.status(201).json(joke);
     })
-    .catch(err => {
-      res.status(500).json({ message: "Error Fetching Jokes", error: err });
-    });
+    .catch(err => res.status(500).json(err));
+}
+
+async function getJokes(req, res) {
+  const jokes = await db("jokes").select("id", "joke", "punchline");
+  res.status(200).json(jokes);
 }
